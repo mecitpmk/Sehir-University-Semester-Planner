@@ -244,8 +244,9 @@ class GUI(Frame):
                 c_code=courses.code.split()[1]
                 concanate=f'{c_name_only} {c_code}'
                 full_name=courses.code
-                if capitalized_word == courses.code.split()[0] or capitalized_word == concanate \
-                                                 or capitalized_word == full_name:
+                # if capitalized_word == courses.code.split()[0] or capitalized_word == concanate \
+                #                                  or capitalized_word == full_name:
+                if capitalized_word == courses.code[:len(capitalized_word)]:
                     my_list.append(courses)
             self.courses_listbox.delete(0,END)
             for c in my_list:
